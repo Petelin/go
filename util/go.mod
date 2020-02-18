@@ -1,5 +1,7 @@
-module github.com/petelin/go/utils
+module github.com/petelin/go/util
 
 go 1.14
 
-require github.com/sirupsen/logrus v1.4.2
+require (
+	github.com/sirupsen/logrus v1.4.2
+)
