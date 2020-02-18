@@ -1,4 +1,4 @@
-module github.com/Petelin/go/util
+module github.com/Petelin/go
 
 go 1.14
 
