@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/kataras/golog"
+	"github.com/sirupsen/logrus"
 )
 
 var notiChan chan string
@@ -17,7 +17,7 @@ func Noti(body string) {
 	select {
 	case notiChan <- body:
 	default:
-		golog.Warn("Noti chan is full")
+		logrus.StandardLogger().Warn("Noti chan is full")
 	}
 }
 func InitNoti(url string) {
@@ -36,7 +36,7 @@ func InitNoti(url string) {
 						if err == nil {
 							break
 						} else {
-							golog.Error("post url err: ", err)
+							logrus.StandardLogger().Error("post url err: ", err)
 						}
 					}
 				}
